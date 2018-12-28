@@ -2,24 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>About</title>
+    <title>Topics</title>
     <div th:replace="fragments/header :: header-css"></div>
 </head>
 <body>
-<div th:replace="fragments/header :: header"></div>
-
-<div class="container">
-
-    <div class="starter-template">
-        <h1>Topics</h1>
-    </div>
-    <div class="container">
-
-    </div>
-
-</div>
-<!-- /.container -->
-
-<div th:replace="fragments/footer :: footer"></div>
+    <div th:replace="fragments/header :: header"></div>
+        <div class="container">
+            <div class="starter-template">
+                <h1>Topics</h1>
+                <table border="1">
+                    <tr>
+                        <th>Link: </th>
+                    </tr>
+                    <tr th:each ="person : ${list}">
+                        <td th:utext="${person}">...</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package com.example.application.controller;
 
+import com.example.application.processing.Processing;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -21,9 +23,10 @@ public class DefaultController {
         return "/user";
     }
 
-    @GetMapping("/topics")
-    public String about() {
-        return "/topics";
+    @GetMapping("/topicsPages")
+    public String topics(Model model) {
+        model.addAttribute("list", new Processing().getLinks());
+        return "/topicsPages";
     }
 
     @GetMapping("/login")
