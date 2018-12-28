@@ -21,9 +21,9 @@ public class DefaultController {
         return "/user";
     }
 
-    @GetMapping("/about")
+    @GetMapping("/topics")
     public String about() {
-        return "/about";
+        return "/topics";
     }
 
     @GetMapping("/login")
