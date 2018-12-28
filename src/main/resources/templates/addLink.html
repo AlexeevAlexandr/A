@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Insert link</title>
+    <div th:replace="fragments/header :: header-css"></div>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+
+    <form action="/addLink">
+        Select topic:<br/>
+        <label>
+            <select name="topic">
+                <option value="none" selected="selected" disabled="disabled" hidden="hidden">Select topic</option>
+                <option value="java">Java</option>
+                <option value="spring">Spring</option>
+                <option value="spring_boot">Spring boot</option>
+                <option value="thymeleaf">Thymeleaf</option>
+            </select>
+        </label><br/>
+        Insert link:<br/>
+            <label>
+                <input type="text" name="link"/>
+            </label><br/><br/>
+            <input type="submit" value="Submit"/>
+    </form>
+
+    <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style="color:red;font-style:italic;">
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

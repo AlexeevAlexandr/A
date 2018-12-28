@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class DefaultController {
 
@@ -57,5 +59,25 @@ public class DefaultController {
     @GetMapping("/thymeleaf")
     public String thymeleaf() {
         return "/topicsPages/thymeleaf";
+    }
+
+    @GetMapping("/addLink")
+    public String addLink(Model model, HttpServletRequest request) {
+        try {
+            String topic = request.getParameter("topic").trim();
+            String link = request.getParameter("link").trim();
+            System.out.print("abc" + link);
+            if (link.isEmpty()){
+                model.addAttribute("errorMessage", "You are trying to add a blank link");
+                return "/addLink";
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            model.addAttribute("errorMessage", "You didn't choose a topic ");
+            return "/addLink";
+        }
+
+
+        return "redirect:/home";
     }
 }
