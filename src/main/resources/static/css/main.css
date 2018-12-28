@@ -10,3 +10,9 @@ p{
 footer{
     margin-top:60px;
 }
+
+ul{
+    text-align: center;
+    font-size: x-large;
+    list-style-type:none
+}

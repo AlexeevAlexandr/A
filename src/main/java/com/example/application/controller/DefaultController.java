@@ -23,12 +23,6 @@ public class DefaultController {
         return "/user";
     }
 
-    @GetMapping("/topicsPages")
-    public String topics(Model model) {
-        model.addAttribute("list", new Processing().getLinks());
-        return "/topicsPages";
-    }
-
     @GetMapping("/login")
     public String login() {
         return "/login";
@@ -39,4 +33,29 @@ public class DefaultController {
         return "/error/403";
     }
 
+    @GetMapping("/topics")
+    public String topics() {
+        return "/topics";
+    }
+
+    @GetMapping("/java")
+    public String java(Model model) {
+        model.addAttribute("list", new Processing().getLinks());
+        return "/topicsPages/java";
+    }
+
+    @GetMapping("/spring")
+    public String spring() {
+        return "/topicsPages/spring";
+    }
+
+    @GetMapping("/spring_boot")
+    public String spring_boot() {
+        return "/topicsPages/spring_boot";
+    }
+
+    @GetMapping("/thymeleaf")
+    public String thymeleaf() {
+        return "/topicsPages/thymeleaf";
+    }
 }

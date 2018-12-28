@@ -9,7 +9,7 @@ public class Processing {
 
     public List getLinks(){
         List<String> list = new ArrayList<>();
-        try (Scanner sc = new Scanner(new File("src\\main\\resources\\html.csv"))){
+        try (Scanner sc = new Scanner(new File("src/main/resources/topicsLinks/java.csv"))){
             while (sc.hasNext()){
                 list.add(sc.nextLine());
             }

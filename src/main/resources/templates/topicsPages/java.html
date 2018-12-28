@@ -2,22 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Topics</title>
+    <title>Java</title>
     <div th:replace="fragments/header :: header-css"></div>
 </head>
 <body>
     <div th:replace="fragments/header :: header"></div>
         <div class="container">
             <div class="starter-template">
-                <h1>Topics</h1>
-                <hr/>
-                <ul>
-                    <li><a href="/java">Java</a></li>
-                    <li><a href="/spring">Spring</a></li>
-                    <li><a href="/spring_boot">Spring_boot</a></li>
-                    <li><a href="/thymeleaf">Thymeleaf</a></li>
+                <h1>Links</h1>
+                <ul th:each ="data : ${list}">
+                    <li><a th:href="${data}"><td th:utext="${data}">...</td></a> </li>
                 </ul>
-                <hr/>
+
             </div>
         </div>
     <div th:replace="fragments/footer :: footer"></div>
