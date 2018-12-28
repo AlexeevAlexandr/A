@@ -1,9 +1,10 @@
 h1{
-    color:#0000FF;
+    color:red;
+    text-align: center;
 }
 
-h2{
-    color:#FF0000;
+p{
+    color:darkgreen;
 }
 
 footer{

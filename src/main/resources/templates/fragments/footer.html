@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Footer</title>
 </head>
-<body>
-<div th:fragment="footer">
-    <div class="container">
-        <footer>
-            <!-- this is footer -->
-            Made by Spring Boot security
-            <span sec:authorize="isAuthenticated()">
-                | Logged user: <span sec:authentication="name"></span> |
-                Roles: <span sec:authentication="principal.authorities"></span> |
-                <a th:href="@{/logout}">Sign Out</a>
-            </span>
-            <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        </footer>
-    </div>
-</div>
-</body>
+    <body>
+        <div th:fragment="footer">
+            <div class="container" style="text-align: center">
+                <footer>
+                    <i>All information available here is for educational purposes only and is free. I hope this will be useful.</i>
+                </footer>
+            </div>
+        </div>
+    </body>
 </html>

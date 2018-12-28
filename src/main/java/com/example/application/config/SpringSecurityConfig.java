@@ -9,8 +9,12 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private final AccessDeniedHandler accessDeniedHandler;
+
     @Autowired
-    private AccessDeniedHandler accessDeniedHandler;
+    public SpringSecurityConfig(AccessDeniedHandler accessDeniedHandler) {
+        this.accessDeniedHandler = accessDeniedHandler;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

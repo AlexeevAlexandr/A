@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
     <title>Header</title>
@@ -26,7 +28,14 @@
             </div>
         </div>
     </nav>
+    <div style="text-align: right">
+        <span sec:authorize="!isAuthenticated()">
+             <a th:href="@{/login}">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <span sec:authorize="isAuthenticated()">
+             User: <span sec:authentication="name">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+             <a th:href="@{/logout}">Sign Out</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+    </div>
 </div>
-
 </body>
 </html>

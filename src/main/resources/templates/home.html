@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Home</title>
-    <div th:replace="fragments/header :: header-css"></div>
-</head>
-<body>
-<div th:replace="fragments/header :: header"></div>
-
-<div class="container">
-
-    <div class="starter-template">
-        <h1>Spring Boot Web Thymeleaf + Spring Security</h1>
-        <h2>1. Visit <a th:href="@{/admin}">Admin page (Spring Security protected, Need Admin Role)</a></h2>
-        <h2>2. Visit <a th:href="@{/user}">User page (Spring Security protected, Need User Role)</a></h2>
-        <h2>3. Visit <a th:href="@{/about}">Normal page</a></h2>
-    </div>
-
-</div>
-<!-- /.container -->
-
-<div th:replace="fragments/footer :: footer"></div>
-
-</body>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Home</title>
+        <div th:replace="fragments/header :: header-css"></div>
+    </head>
+    <body>
+        <div th:replace="fragments/header :: header"></div>
+            <div class="container">
+                <div class="starter-template">
+                    <h1>Testing site</h1>
+                    <p>This page has been created for educational purposes.</p>
+                    <p>Mostly for people who are learning the Java programming language.
+                        But also here you can find information about some other languages ​​or frameworks
+                        that may be useful when working with Java.</p>
+                    <p>In addition to information, you can find many links to useful educational sites.</p>
+                    <p> It is sometimes difficult to find available information for beginners.
+                        Some authors have a very deep understanding of the language,
+                        and beginners cannot understand their explanations.
+                        This doesn't mean that the author has written poorly,
+                        it means that novice programmers cannot understand this yet.</p>
+                    <p>In my options, all these links go to very understanding information.</p>
+                    <p> If you have a useful link or links and you want share them on this site for another people
+                        <a href="#">click here.</a></p>
+                </div>
+            </div>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
 </html>
