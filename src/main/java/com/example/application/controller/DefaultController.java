@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class DefaultController {
+    private Processing processing = new Processing();
 
     @GetMapping({"/", "/home"})
     public String home() {
@@ -42,22 +43,25 @@ public class DefaultController {
 
     @GetMapping("/java")
     public String java(Model model) {
-        model.addAttribute("list", new Processing().getLinks());
+        model.addAttribute("list", processing.getLinks("java"));
         return "/topicsPages/java";
     }
 
     @GetMapping("/spring")
-    public String spring() {
+    public String spring(Model model) {
+        model.addAttribute("list", processing.getLinks("spring"));
         return "/topicsPages/spring";
     }
 
     @GetMapping("/spring_boot")
-    public String spring_boot() {
+    public String spring_boot(Model model) {
+        model.addAttribute("list", processing.getLinks("spring_boot"));
         return "/topicsPages/spring_boot";
     }
 
     @GetMapping("/thymeleaf")
-    public String thymeleaf() {
+    public String thymeleaf(Model model) {
+        model.addAttribute("list", processing.getLinks("thymeleaf"));
         return "/topicsPages/thymeleaf";
     }
 
@@ -66,18 +70,17 @@ public class DefaultController {
         try {
             String topic = request.getParameter("topic").trim();
             String link = request.getParameter("link").trim();
-            System.out.print("abc" + link);
             if (link.isEmpty()){
                 model.addAttribute("errorMessage", "You are trying to add a blank link");
                 return "/addLink";
+            }else {
+                processing.setLinks(topic,link);
+                return "redirect:/home";
             }
         }catch (Exception e){
             e.printStackTrace();
             model.addAttribute("errorMessage", "You didn't choose a topic ");
             return "/addLink";
         }
-
-
-        return "redirect:/home";
     }
 }
