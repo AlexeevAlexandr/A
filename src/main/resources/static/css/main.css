@@ -16,3 +16,13 @@ ul{
     font-size: x-large;
     list-style-type:none
 }
+
+.center{
+    text-align: center;
+}
+
+.errorMessage{
+    color:red;
+    font-style:italic;
+    text-align: center
+}

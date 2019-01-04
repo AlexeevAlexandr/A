@@ -8,7 +8,7 @@
 <body>
     <div th:replace="fragments/header :: header"></div>
 
-    <form action="/addLink">
+    <form action="/addLink" class="center">
         Select topic:<br/>
         <label>
             <select name="topic">
@@ -18,16 +18,16 @@
                 <option value="spring_boot">Spring boot</option>
                 <option value="thymeleaf">Thymeleaf</option>
             </select>
-        </label><br/>
+        </label><br/><br/>
         Insert link:<br/>
             <label>
-                <input type="text" name="link"/>
+                <input type="text" name="link" title="insert link"/>
             </label><br/><br/>
             <input type="submit" value="Submit"/>
     </form>
 
-    <div th:if="${errorMessage}" th:utext="${errorMessage}"
-         style="color:red;font-style:italic;">
+    <br/><br/><br/><br/><br/>
+    <div th:if="${errorMessage}" th:utext="${errorMessage}" class="errorMessage">
     </div>
 
     <div th:replace="fragments/footer :: footer"></div>
