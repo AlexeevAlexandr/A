@@ -19,13 +19,17 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <!-- optional, it brings userful tags to display spring security stuff -->
+        <!-- optional, it brings useful tags to display spring security stuff -->
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
@@ -35,6 +39,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
+            <scope>runtime</scope>
         </dependency>
         <!-- Optional, for bootstrap -->
         <dependency>
@@ -44,6 +49,8 @@
         </dependency>
     </dependencies>
     <build>
+        <!--allows to set a name for the application-->
+        <finalName>Spring-Boot-Security-Web-Application</finalName>
         <plugins>
             <!-- Package as an executable jar/war -->
             <plugin>
@@ -52,5 +59,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
